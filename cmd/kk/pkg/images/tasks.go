@@ -156,7 +156,7 @@ func GetImage(runtime connector.ModuleRuntime, kubeConf *common.KubeConf, name s
 type SaveImages struct {
 	common.ArtifactAction
 	ImageStartIndex int
-	ImageTransport string
+	ImageTransport  string
 }
 
 func (s *SaveImages) Execute(runtime connector.Runtime) error {
@@ -278,7 +278,7 @@ func (c *CopyImagesToRegistry) Execute(runtime connector.Runtime) error {
 		image := Image{
 			RepoAddr:          repoAddr,
 			Namespace:         namespace,
-			NamespaceOverride: c.KubeConf.Cluster.Registry.NamespaceOverride,
+			NamespaceOverride: "",
 			Repo:              imageName,
 			Tag:               imageTag,
 		}
@@ -314,7 +314,12 @@ func (c *CopyImagesToRegistry) Execute(runtime connector.Runtime) error {
 		}
 
 		srcName := fmt.Sprintf("oci:%s:%s", imagesPath, ref)
-		destName := formatImageName(c.ImageTransport, uniqueImage)
+		destName := formatImageName(c.ImageTransport, image.ImageName())
+
+		if c.ImageTransport == common.DockerDaemon {
+			destName = formatImageName(c.ImageTransport, uniqueImage)
+		}
+
 		logger.Log.Infof("Source: %s", srcName)
 		logger.Log.Infof("Destination: %s", destName)
 
@@ -375,8 +380,8 @@ func (p *PushManifest) Execute(_ connector.Runtime) error {
 
 	auths := registry.DockerRegistryAuthEntries(p.KubeConf.Cluster.Registry.Auths)
 	auth := new(registry.DockerRegistryEntry)
-	if _, ok := auths[p.KubeConf.Cluster.Registry.PrivateRegistry]; ok {
-		auth = auths[p.KubeConf.Cluster.Registry.PrivateRegistry]
+	if _, ok := auths[p.KubeConf.Cluster.Registry.GetHost()]; ok {
+		auth = auths[p.KubeConf.Cluster.Registry.GetHost()]
 	}
 
 	for imageName, platforms := range list {

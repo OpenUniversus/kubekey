@@ -805,6 +805,24 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "Hiiirad",
+      "name": "Hirad Rasoolinejad",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26739670?v=4",
+      "profile": "https://github.com/Hiiirad",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "xLexih",
+      "name": "Lexih",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67009568?v=4",
+      "profile": "https://github.com/xLexih",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

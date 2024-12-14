@@ -14,16 +14,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: centos7-rpms
-            dockerfile: dockerfile.centos7
           - name: almalinux-9.0-rpms
             dockerfile: dockerfile.almalinux90
           - name: debian10-debs
             dockerfile: dockerfile.debian10
           - name: debian11-debs
             dockerfile: dockerfile.debian11
-          - name: ubuntu-16.04-debs
-            dockerfile: dockerfile.ubuntu1604
           - name: ubuntu-18.04-debs
             dockerfile: dockerfile.ubuntu1804
           - name: ubuntu-20.04-debs
@@ -41,7 +37,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build iso image to local
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: hack/gen-repository-iso
           file: hack/gen-repository-iso/${{ matrix.dockerfile }}
@@ -56,7 +52,7 @@ jobs:
           sha256sum *.iso >  ${{ matrix.name }}.iso.sha256sum.txt
 
       - name: Wait for release workflow to finish
-        uses: lewagon/wait-on-check-action@v1.3.3
+        uses: lewagon/wait-on-check-action@v1.3.4
         with:
           ref: ${{ github.ref }}
           check-name: 'create draft release'

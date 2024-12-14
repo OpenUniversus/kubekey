@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/kubesphere/kubekey/workflows/CI/badge.svg?branch=master&event=push)](https://github.com/kubesphere/kubekey/actions?query=event%3Apush+branch%3Amaster+workflow%3ACI+)
 
-> [English](README.md) | 中文
+> [English](README.md) | 中文 | [日本語](README_ja-JP.md)
 
 KubeKey是一个开源的轻量级工具，用于部署Kubernetes集群。它提供了一种灵活、快速、方便的方式来安装Kubernetes/K3s、Kubernetes/K3s和KubeSphere，以及相关的云原生附加组件。它也是扩展和升级集群的有效工具。
 
@@ -420,6 +420,8 @@ kubectl completion bash >/etc/bash_completion.d/kubectl
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/xrwang8"><img src="https://avatars.githubusercontent.com/u/68765051?v=4?s=100" width="100px;" alt="Ronald Fletcher"/><br /><sub><b>Ronald Fletcher</b></sub></a><br /><a href="https://github.com/kubesphere/kubekey/commits?author=xrwang8" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/baikjy0215"><img src="https://avatars.githubusercontent.com/u/110450904?v=4?s=100" width="100px;" alt="baikjy0215"/><br /><sub><b>baikjy0215</b></sub></a><br /><a href="https://github.com/kubesphere/kubekey/commits?author=baikjy0215" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/knowmost"><img src="https://avatars.githubusercontent.com/u/167442703?v=4?s=100" width="100px;" alt="knowmost"/><br /><sub><b>knowmost</b></sub></a><br /><a href="https://github.com/kubesphere/kubekey/commits?author=knowmost" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Hiiirad"><img src="https://avatars.githubusercontent.com/u/26739670?v=4?s=100" width="100px;" alt="Hirad Rasoolinejad"/><br /><sub><b>Hirad Rasoolinejad</b></sub></a><br /><a href="https://github.com/kubesphere/kubekey/commits?author=Hiiirad" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/xLexih"><img src="https://avatars.githubusercontent.com/u/67009568?v=4?s=100" width="100px;" alt="Lexih"/><br /><sub><b>Lexih</b></sub></a><br /><a href="https://github.com/kubesphere/kubekey/commits?author=xLexih" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
